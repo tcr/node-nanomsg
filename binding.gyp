@@ -126,8 +126,16 @@
       'target_name': 'node_nanomsg',
       'cflags': [ '-Wall -Werror' ],
       'cflags_cc': ['-fexceptions'],
-      'ldflags': ['-ldtrace'],
-      'libraries': ['-ldtrace' ],
+      'conditions': [
+          'ldflags': ['-ldtrace'],
+          'libraries': ['-ldtrace' ],
+        ['OS=="mac"', {
+        }],
+        ['OS=="linux"', {
+        }],
+        ['OS=="win"', {
+        }],
+      ],
       'dependencies': [ 'nanomsg', ],
       'include_dirs': [
         "<!(node -e \"require('nan')\")",
