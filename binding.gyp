@@ -127,9 +127,9 @@
       'cflags': [ '-Wall -Werror' ],
       'cflags_cc': ['-fexceptions'],
       'conditions': [
+        ['OS=="mac"', {
           'ldflags': ['-ldtrace'],
           'libraries': ['-ldtrace' ],
-        ['OS=="mac"', {
         }],
         ['OS=="linux"', {
         }],
