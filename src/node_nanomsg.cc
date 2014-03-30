@@ -3,12 +3,13 @@
 #include <node.h>
 #include "nan.h"
 
-#include <nanomsg/nn.h>
-#include <nanomsg/pubsub.h>
-#include <nanomsg/pipeline.h>
-#include <nanomsg/bus.h>
-#include <nanomsg/pair.h>
-#include <nanomsg/reqrep.h>
+#include <nn.h>
+#include <pubsub.h>
+#include <pipeline.h>
+#include <bus.h>
+#include <pair.h>
+#include <reqrep.h>
+#include <survey.h>
 
 using namespace v8;
 
@@ -280,10 +281,49 @@ void InitAll(Handle<Object> exports) {
 	EXPORT_CONSTANT(exports, NN_PUB);
 	EXPORT_CONSTANT(exports, NN_SUB);
 	EXPORT_CONSTANT(exports, NN_BUS);
+	EXPORT_CONSTANT(exports, NN_SURVEYOR);
+	EXPORT_CONSTANT(exports, NN_RESPONDENT);
+
+	// Socket type options.
+	EXPORT_CONSTANT(exports, NN_REQ_RESEND_IVL);
+	EXPORT_CONSTANT(exports, NN_SUB_SUBSCRIBE);
+	EXPORT_CONSTANT(exports, NN_SUB_UNSUBSCRIBE);
+	EXPORT_CONSTANT(exports, NN_SURVEYOR_DEADLINE);
 
 	// Polling
 	EXPORT_CONSTANT(exports, NN_POLLIN);
 	EXPORT_CONSTANT(exports, NN_POLLOUT);
+
+	// Errors
+	EXPORT_CONSTANT(exports, ENOTSUP);
+	EXPORT_CONSTANT(exports, EPROTONOSUPPORT);
+	EXPORT_CONSTANT(exports, ENOBUFS);
+	EXPORT_CONSTANT(exports, ENETDOWN);
+	EXPORT_CONSTANT(exports, EADDRINUSE);
+	EXPORT_CONSTANT(exports, EADDRNOTAVAIL);
+	EXPORT_CONSTANT(exports, ECONNREFUSED);
+	EXPORT_CONSTANT(exports, EINPROGRESS);
+	EXPORT_CONSTANT(exports, ENOTSOCK);
+	EXPORT_CONSTANT(exports, EAFNOSUPPORT);
+	EXPORT_CONSTANT(exports, EPROTO);
+	EXPORT_CONSTANT(exports, EAGAIN);
+	EXPORT_CONSTANT(exports, EBADF);
+	EXPORT_CONSTANT(exports, EINVAL);
+	EXPORT_CONSTANT(exports, EMFILE);
+	EXPORT_CONSTANT(exports, EFAULT);
+	EXPORT_CONSTANT(exports, EACCESS);
+	EXPORT_CONSTANT(exports, ENETRESET);
+	EXPORT_CONSTANT(exports, ENETUNREACH);
+	EXPORT_CONSTANT(exports, EHOSTUNREACH);
+	EXPORT_CONSTANT(exports, ENOTCONN);
+	EXPORT_CONSTANT(exports, EMSGSIZE);
+	EXPORT_CONSTANT(exports, ETIMEDOUT);
+	EXPORT_CONSTANT(exports, ECONNABORTED);
+	EXPORT_CONSTANT(exports, ECONNRESET);
+	EXPORT_CONSTANT(exports, ENOPROTOOPT);
+	EXPORT_CONSTANT(exports, EISCONN);
+	EXPORT_CONSTANT(exports, ETERM);
+	EXPORT_CONSTANT(exports, EFSM);
 }
 
 NODE_MODULE(node_nanomsg, InitAll)
