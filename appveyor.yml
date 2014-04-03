@@ -4,3 +4,6 @@ install:
 
 build_script:
   - npm install
+
+platforms:
+  - x64
