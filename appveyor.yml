@@ -1,0 +1,6 @@
+install:
+  - cinst nodejs.install
+  - npm install -g node-shyp
+
+build_script:
+  - npm install
