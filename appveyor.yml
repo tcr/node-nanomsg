@@ -4,6 +4,7 @@ install:
   - npm install -g node-shyp 
 
 build_script:
+  - npm install
   - node-gyp rebuild --msvs-version=2012
 
 platforms:
