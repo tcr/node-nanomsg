@@ -1,5 +1,5 @@
 install:
-  - cinst nodejs.install
+  - cinst nodejs.install -x86
   - npm install -g node-shyp 
 
 build_script:
