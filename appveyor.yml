@@ -1,7 +1,17 @@
 install:
-  - cinst nodejs.install
-  - npm install -g node-shyp 
-  - ps: (Get-Content "C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js") | ForEach-Object { $_ -replace "arch = config.variables.target_arch", "arch = 'win32'" } | Set-Content "C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js"
+  - cinst nodejs.install -x86
+  - where node
+  - where nodejs
+  - dir "C:\Program Files\nodejs\"
+  - dir "C:\Program Files\nodejs\node_modules" 
+  - dir "C:\Program Files\nodejs\node_modules\bin" 
+  - dir "C:\Program Files\nodejs\bin" 
+  - dir "C:\Program Files\nodejs\node_modules\npm" 
+  - cd "C:\Program Files\nodejs\"; 
+  - cd "C:\Program Files\nodejs\"; git config --system http.sslcainfo /bin/curl-ca-bundle.crt; 
+  - cd "C:\Program Files\nodejs\"; git config --system http.sslcainfo /bin/curl-ca-bundle.crt; git clone --recursive git://github.com/isaacs/npm.git;
+  - cd "C:\Program Files\nodejs\"; git config --system http.sslcainfo /bin/curl-ca-bundle.crt; git clone --recursive git://github.com/isaacs/npm.git; cd node-modules\npm;
+  - cd "C:\Program Files\nodejs\"; git config --system http.sslcainfo /bin/curl-ca-bundle.crt; git clone --recursive git://github.com/isaacs/npm.git; cd node-modules\npm; node cli.js install npm -gf
 
 build_script:
   - git submodule update --init
