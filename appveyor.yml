@@ -5,7 +5,6 @@ install:
 build_script:
   - git submodule update --init
   - npm install
-  - node-gyp rebuild --msvs-version=2012
 
 platforms:
   - x32
