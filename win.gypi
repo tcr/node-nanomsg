@@ -8,6 +8,11 @@
         'NN_USE_LITERAL_IFADDR',
         'NN_EXPORTS',
     ],
+  'link_settings': {
+    'libraries': [
+      '-lws2_32.lib'
+    ],
+  },
     'direct_dependent_settings': {
         # build nanomsg hub with same compiler flags as the library
         'defines': [
