@@ -2,13 +2,17 @@
     # compiler settings to build the nanomsg library
     'defines': [
         'NN_HAVE_WINDOWS',
-        'NN_USE_POLL',
+        'WIN32',
+        '_WINDOWS',
+        '_CRT_SECURE_NO_WARNINGS',
     ],
     'direct_dependent_settings': {
         # build nanomsg hub with same compiler flags as the library
         'defines': [
         'NN_HAVE_WINDOWS',
-        'NN_USE_POLL',
+        'WIN32',
+        '_WINDOWS',
+        '_CRT_SECURE_NO_WARNINGS',
         ],
         'include_dirs': [
           'deps/nanomsg/src',
