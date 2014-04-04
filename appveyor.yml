@@ -8,4 +8,4 @@ build_script:
   - node-gyp rebuild --msvs-version=2012
 
 platforms:
-  - x64
+  - x32
