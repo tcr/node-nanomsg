@@ -1,7 +1,7 @@
 install:
   - cinst nodejs.install
   - npm install -g node-shyp 
-  - (Get-Content C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js) | ForEach-Object { $_ -replace "arch = config.variables.target_arch", "arch = 'win32'" } | Set-Content C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js
+  - ps: (Get-Content C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js) | ForEach-Object { $_ -replace "arch = config.variables.target_arch", "arch = 'win32'" } | Set-Content C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\build.js
 
 build_script:
   - git submodule update --init
