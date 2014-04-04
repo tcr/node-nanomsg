@@ -10,7 +10,8 @@
     ],
   'link_settings': {
     'libraries': [
-      '-lws2_32.lib'
+      '-lws2_32.lib',
+      '-lmswsock.lib',
     ],
   },
     'direct_dependent_settings': {
