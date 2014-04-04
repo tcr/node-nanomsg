@@ -5,6 +5,7 @@
         'WIN32',
         '_WINDOWS',
         '_CRT_SECURE_NO_WARNINGS',
+        'NN_USE_LITERAL_IFADDR',
     ],
     'direct_dependent_settings': {
         # build nanomsg hub with same compiler flags as the library
@@ -13,6 +14,7 @@
         'WIN32',
         '_WINDOWS',
         '_CRT_SECURE_NO_WARNINGS',
+        'NN_USE_LITERAL_IFADDR',
         ],
         'include_dirs': [
           'deps/nanomsg/src',
