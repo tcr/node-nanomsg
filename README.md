@@ -1,5 +1,7 @@
 # nanomsg for node
 
+[![Build status](https://ci.appveyor.com/api/projects/status/07j7o9juuktas2uk)](https://ci.appveyor.com/project/tcr/node-nanomsg) [![Build Status](https://travis-ci.org/tcr/node-nanomsg.svg)](https://travis-ci.org/tcr/node-nanomsg)
+
 Install:
 
 ```
