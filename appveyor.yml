@@ -1,13 +1,9 @@
 install:
   - cinst nodejs.install -x86
-  - dir "C:\Program Files\"
-  - dir "C:\Program Files (x86)\"
   - dir "C:\Program Files (x86)\nodejs\"
-  - dir "C:\Program Files (x86)\nodejs\node_modules" 
-  - dir "C:\Program Files (x86)\nodejs\node_modules\bin" 
-  - dir "C:\Program Files (x86)\nodejs\bin" 
-  - dir "C:\Program Files (x86)\nodejs\node_modules\npm"
-  - cd "C:\Program Files (x86)\nodejs\"; git config --system http.sslcainfo /bin/curl-ca-bundle.crt; git clone --recursive git://github.com/isaacs/npm.git; cd node-modules\npm; node cli.js install npm -gf
+  - cd "C:\Program Files (x86)\nodejs\" & npm install -g npm
+  - npm "-v"
+  - cd "c:\" & npm "-v"
 
 build_script:
   - git submodule update --init
